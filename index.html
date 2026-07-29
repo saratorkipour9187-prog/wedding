@@ -2,71 +2,113 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#efe6db">
   <title>دعوت‌نامه عروسی مهسا و میلاد</title>
   <style>
     :root{
-      --bg1:#fbf8f3; --bg2:#eadbc9; --card:rgba(255,255,255,.72);
-      --text:#382f2b; --gold:#b88a52;
+      --cream:#fbf8f3;
+      --cream2:#eadbc9;
+      --gold:#b98649;
+      --text:#4c3a30;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif}
+    html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif}
     body{
       color:var(--text);
       background:
-        radial-gradient(circle at 15% 18%,rgba(255,255,255,.95),transparent 30%),
-        radial-gradient(circle at 90% 5%,rgba(222,198,171,.65),transparent 30%),
-        linear-gradient(145deg,var(--bg1),var(--bg2));
+        radial-gradient(circle at 88% 8%,rgba(204,164,115,.18) 0 16%,transparent 17%),
+        radial-gradient(circle at 10% 92%,rgba(204,164,115,.12) 0 18%,transparent 19%),
+        linear-gradient(145deg,var(--cream),var(--cream2));
       overflow-x:hidden;
     }
-    body:before,body:after{
-      content:"";position:fixed;width:250px;height:250px;border:1px solid rgba(184,138,82,.35);
-      border-radius:50%;pointer-events:none
+    .page{
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+      padding:28px 16px;
     }
-    body:before{top:-115px;right:-95px}
-    body:after{bottom:-125px;left:-105px}
-    .page{min-height:100vh;display:grid;place-items:center;padding:24px 16px}
     .card{
-      width:min(94vw,560px);padding:38px 20px 28px;text-align:center;
-      background:var(--card);border:1px solid rgba(255,255,255,.85);border-radius:30px;
-      box-shadow:0 24px 70px rgba(76,54,36,.17);backdrop-filter:blur(18px);
+      width:min(680px,100%);
+      background:rgba(255,255,255,.78);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.7);
+      border-radius:34px;
+      box-shadow:0 20px 60px rgba(91,68,45,.15);
+      padding:42px 24px 30px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
     }
+    .card:before,.card:after{
+      content:"";
+      position:absolute;
+      width:180px;height:180px;
+      border:1px solid rgba(185,134,73,.35);
+      border-radius:50%;
+      pointer-events:none;
+    }
+    .card:before{right:-95px;top:-90px}
+    .card:after{left:-110px;bottom:-105px}
     .monogram{
-      width:78px;height:78px;margin:0 auto 18px;border:1px solid var(--gold);border-radius:50%;
-      display:grid;place-items:center;font:26px Georgia,serif;color:var(--gold);letter-spacing:2px
+      width:92px;height:92px;
+      border:1.5px solid var(--gold);
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      margin:0 auto 22px;
+      font-family:Georgia,serif;
+      color:var(--gold);
+      font-size:30px;
+      letter-spacing:1px;
     }
-    .eyebrow{font-size:13px;letter-spacing:3px;color:#806956;margin-bottom:12px}
-    h1{margin:0;font:500 clamp(38px,9vw,58px)/1.2 Georgia,"Times New Roman",serif}
-    .heart{color:var(--gold);font-size:.65em;margin:0 7px}
-    .divider{width:110px;height:1px;margin:24px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-    .invite{margin:0 auto 24px;max-width:390px;font-size:16px;line-height:2;color:#5f4d43}
-    .play{
-      border:0;border-radius:999px;padding:16px 30px;cursor:pointer;font-size:16px;font-weight:700;color:#fff;
-      background:linear-gradient(135deg,#c79a62,#9f6f3d);box-shadow:0 14px 30px rgba(159,111,61,.28)
+    .eyebrow{
+      letter-spacing:7px;
+      font-weight:700;
+      font-size:14px;
+      margin-bottom:28px;
     }
-    .note,.footer{color:#89786d;font-size:12px}.note{margin-top:16px}.footer{margin-top:20px}
-    .modal{
-      position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
-      background:rgba(18,14,12,.86);padding:12px
+    h1{
+      margin:0;
+      font-size:clamp(34px,7vw,54px);
+      font-weight:600;
+      line-height:1.25;
     }
-    .modal.open{display:flex}
-    .video-shell{
-      position:relative;width:min(96vw,520px);height:min(92vh,900px);background:#000;border-radius:22px;
-      overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,.45)
+    .heart{color:var(--gold);font-size:.65em;vertical-align:middle;padding:0 8px}
+    .rule{
+      width:150px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+      margin:28px auto;
     }
-    .video-shell iframe{width:100%;height:100%;border:0;display:block;background:#000}
-    .close{
-      position:absolute;top:10px;left:10px;z-index:3;width:42px;height:42px;border-radius:50%;
-      border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.55);color:#fff;font-size:26px;cursor:pointer
+    .lead{font-size:18px;line-height:2;margin:0 0 24px}
+    .open-btn{
+      border:0;
+      background:linear-gradient(135deg,#d29c59,#a96f31);
+      color:white;
+      font-weight:800;
+      font-size:18px;
+      border-radius:999px;
+      padding:16px 30px;
+      min-width:250px;
+      box-shadow:0 10px 25px rgba(169,111,49,.28);
+      cursor:pointer;
     }
-    .fallback{
-      position:absolute;left:12px;right:12px;bottom:12px;z-index:3;text-align:center
+    .hint{margin:18px 0 0;font-size:14px;opacity:.72}
+    .footer{margin-top:26px;font-size:15px;opacity:.78}
+    .video-wrap{
+      display:none;
+      margin-top:28px;
+      animation:fade .35s ease;
     }
-    .fallback a{
-      display:inline-block;color:#fff;background:rgba(0,0,0,.62);padding:9px 14px;border-radius:999px;
-      font-size:12px;text-decoration:none
+    .video-wrap.show{display:block}
+    video{
+      width:100%;
+      max-height:75svh;
+      border-radius:22px;
+      background:#000;
+      box-shadow:0 14px 35px rgba(0,0,0,.22);
     }
+    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   </style>
 </head>
 <body>
@@ -74,55 +116,40 @@
     <section class="card">
       <div class="monogram">M&amp;M</div>
       <div class="eyebrow">WEDDING INVITATION</div>
+
       <h1>مهسا <span class="heart">♥</span> میلاد</h1>
-      <div class="divider"></div>
-      <p class="invite">با افتخار و صمیمانه،<br>شما را به جشن آغاز زندگی مشترکمان دعوت می‌کنیم.</p>
-      <button class="play" id="playBtn" type="button">▶ مشاهده دعوت‌نامه</button>
-      <div class="note">برای پخش ویدیو روی دکمه بالا بزنید</div>
+      <div class="rule"></div>
+
+      <p class="lead">
+        با افتخار و صمیمانه،<br>
+        شما را به جشن آغاز زندگی مشترکمان دعوت می‌کنیم.
+      </p>
+
+      <button class="open-btn" id="openBtn" type="button">▶ مشاهده دعوت‌نامه</button>
+      <p class="hint">برای پخش ویدیو روی دکمه بالا بزنید</p>
+
+      <div class="video-wrap" id="videoWrap">
+        <video id="weddingVideo" controls playsinline preload="metadata">
+          <source src="./MahsaMilad_web.mp4" type="video/mp4">
+          مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+        </video>
+      </div>
+
       <div class="footer">با عشق، منتظر دیدارتان هستیم 🤍</div>
     </section>
   </main>
 
-  <div class="modal" id="videoModal" aria-hidden="true">
-    <div class="video-shell">
-      <button class="close" id="closeBtn" type="button" aria-label="بستن">×</button>
-      <iframe
-        id="videoFrame"
-        title="دعوت‌نامه عروسی مهسا و میلاد"
-        allow="autoplay; fullscreen"
-        allowfullscreen>
-      </iframe>
-      <div class="fallback">
-        <a href="https://drive.google.com/file/d/1O3-LN2OZVa2brKf0-BMvHSEhUv96Kdef/view" target="_blank" rel="noopener">
-          اگر ویدیو باز نشد، اینجا بزنید
-        </a>
-      </div>
-    </div>
-  </div>
-
   <script>
-    const fileId = "1O3-LN2OZVa2brKf0-BMvHSEhUv96Kdef";
-    const previewUrl = `https://drive.google.com/file/d/${fileId}/preview`;
-    const modal = document.getElementById("videoModal");
-    const frame = document.getElementById("videoFrame");
-    const playBtn = document.getElementById("playBtn");
-    const closeBtn = document.getElementById("closeBtn");
+    const btn = document.getElementById('openBtn');
+    const wrap = document.getElementById('videoWrap');
+    const video = document.getElementById('weddingVideo');
 
-    function openVideo(){
-      frame.src = previewUrl;
-      modal.classList.add("open");
-      modal.setAttribute("aria-hidden","false");
-      document.body.style.overflow = "hidden";
-    }
-    function closeVideo(){
-      frame.src = "";
-      modal.classList.remove("open");
-      modal.setAttribute("aria-hidden","true");
-      document.body.style.overflow = "";
-    }
-    playBtn.addEventListener("click", openVideo);
-    closeBtn.addEventListener("click", closeVideo);
-    modal.addEventListener("click", (e) => { if(e.target === modal) closeVideo(); });
+    btn.addEventListener('click', async () => {
+      wrap.classList.add('show');
+      btn.style.display = 'none';
+      wrap.scrollIntoView({behavior:'smooth', block:'center'});
+      try { await video.play(); } catch (e) {}
+    });
   </script>
 </body>
 </html>
