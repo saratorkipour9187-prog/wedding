@@ -1,265 +1,128 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#efe8df" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#efe6db">
   <title>دعوت‌نامه عروسی مهسا و میلاد</title>
-  <meta name="description" content="با افتخار و صمیمانه، شما را به جشن عروسی مهسا و میلاد دعوت می‌کنیم." />
-
-  <meta property="og:title" content="دعوت‌نامه عروسی مهسا و میلاد 🤍" />
-  <meta property="og:description" content="برای مشاهده دعوت‌نامه وارد شوید." />
-  <meta property="og:type" content="website" />
-
   <style>
-    :root {
-      --cream: #f8f3ec;
-      --ink: #362d2a;
-      --gold: #b68a56;
-      --line: rgba(182,138,86,.35);
-      --glass: rgba(255,255,255,.62);
+    :root{
+      --bg1:#fbf8f3; --bg2:#eadbc9; --card:rgba(255,255,255,.72);
+      --text:#382f2b; --gold:#b88a52;
     }
-
-    * { box-sizing: border-box; }
-    html, body { min-height: 100%; margin: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Arial, sans-serif;
-      color: var(--ink);
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif}
+    body{
+      color:var(--text);
       background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,.9), transparent 30%),
-        radial-gradient(circle at 85% 10%, rgba(223,203,180,.55), transparent 32%),
-        linear-gradient(145deg, #fbf8f3 0%, #efe4d7 100%);
-      overflow-x: hidden;
+        radial-gradient(circle at 15% 18%,rgba(255,255,255,.95),transparent 30%),
+        radial-gradient(circle at 90% 5%,rgba(222,198,171,.65),transparent 30%),
+        linear-gradient(145deg,var(--bg1),var(--bg2));
+      overflow-x:hidden;
     }
-
-    body::before, body::after {
-      content: "";
-      position: fixed;
-      width: 240px;
-      height: 240px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      z-index: 0;
-      pointer-events: none;
+    body:before,body:after{
+      content:"";position:fixed;width:250px;height:250px;border:1px solid rgba(184,138,82,.35);
+      border-radius:50%;pointer-events:none
     }
-    body::before { top: -110px; right: -90px; }
-    body::after { bottom: -120px; left: -100px; }
-
-    .petal {
-      position: fixed;
-      top: -40px;
-      width: 10px;
-      height: 16px;
-      background: rgba(255,255,255,.85);
-      border-radius: 60% 40% 60% 40%;
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,.05));
-      animation: fall linear infinite;
-      z-index: 1;
-      pointer-events: none;
+    body:before{top:-115px;right:-95px}
+    body:after{bottom:-125px;left:-105px}
+    .page{min-height:100vh;display:grid;place-items:center;padding:24px 16px}
+    .card{
+      width:min(94vw,560px);padding:38px 20px 28px;text-align:center;
+      background:var(--card);border:1px solid rgba(255,255,255,.85);border-radius:30px;
+      box-shadow:0 24px 70px rgba(76,54,36,.17);backdrop-filter:blur(18px);
     }
-    @keyframes fall {
-      to { transform: translate3d(var(--drift), 110vh, 0) rotate(540deg); }
+    .monogram{
+      width:78px;height:78px;margin:0 auto 18px;border:1px solid var(--gold);border-radius:50%;
+      display:grid;place-items:center;font:26px Georgia,serif;color:var(--gold);letter-spacing:2px
     }
-
-    .page {
-      position: relative;
-      z-index: 2;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 28px 18px;
+    .eyebrow{font-size:13px;letter-spacing:3px;color:#806956;margin-bottom:12px}
+    h1{margin:0;font:500 clamp(38px,9vw,58px)/1.2 Georgia,"Times New Roman",serif}
+    .heart{color:var(--gold);font-size:.65em;margin:0 7px}
+    .divider{width:110px;height:1px;margin:24px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+    .invite{margin:0 auto 24px;max-width:390px;font-size:16px;line-height:2;color:#5f4d43}
+    .play{
+      border:0;border-radius:999px;padding:16px 30px;cursor:pointer;font-size:16px;font-weight:700;color:#fff;
+      background:linear-gradient(135deg,#c79a62,#9f6f3d);box-shadow:0 14px 30px rgba(159,111,61,.28)
     }
-
-    .card {
-      width: min(94vw, 560px);
-      padding: 38px 22px 28px;
-      text-align: center;
-      background: var(--glass);
-      border: 1px solid rgba(255,255,255,.75);
-      border-radius: 30px;
-      box-shadow: 0 24px 70px rgba(79,59,42,.16);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      animation: rise .9s ease both;
+    .note,.footer{color:#89786d;font-size:12px}.note{margin-top:16px}.footer{margin-top:20px}
+    .modal{
+      position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
+      background:rgba(18,14,12,.86);padding:12px
     }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(24px) scale(.98); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
+    .modal.open{display:flex}
+    .video-shell{
+      position:relative;width:min(96vw,520px);height:min(92vh,900px);background:#000;border-radius:22px;
+      overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,.45)
     }
-
-    .monogram {
-      width: 74px;
-      height: 74px;
-      margin: 0 auto 18px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-family: Georgia, serif;
-      color: var(--gold);
-      font-size: 25px;
-      letter-spacing: 2px;
+    .video-shell iframe{width:100%;height:100%;border:0;display:block;background:#000}
+    .close{
+      position:absolute;top:10px;left:10px;z-index:3;width:42px;height:42px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.55);color:#fff;font-size:26px;cursor:pointer
     }
-
-    .eyebrow {
-      font-size: 13px;
-      letter-spacing: 3px;
-      color: #846b57;
-      margin-bottom: 10px;
+    .fallback{
+      position:absolute;left:12px;right:12px;bottom:12px;z-index:3;text-align:center
     }
-
-    h1 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 9vw, 58px);
-      font-weight: 500;
-      line-height: 1.15;
-    }
-
-    .heart {
-      color: var(--gold);
-      font-size: .64em;
-      vertical-align: 12%;
-      margin: 0 6px;
-    }
-
-    .divider {
-      width: 110px;
-      height: 1px;
-      margin: 22px auto;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    .invite {
-      margin: 0 auto 22px;
-      max-width: 380px;
-      line-height: 2;
-      font-size: 16px;
-      color: #5f4d43;
-    }
-
-    .play-btn {
-      appearance: none;
-      border: 0;
-      cursor: pointer;
-      padding: 15px 28px;
-      border-radius: 999px;
-      font-size: 16px;
-      color: white;
-      background: linear-gradient(135deg, #c39a68, #9d7042);
-      box-shadow: 0 14px 30px rgba(157,112,66,.25);
-      transition: .25s ease;
-    }
-    .play-btn:hover { transform: translateY(-2px); }
-    .play-btn:active { transform: scale(.98); }
-
-    .note {
-      margin-top: 16px;
-      font-size: 12px;
-      color: #8c7b70;
-    }
-
-    .video-wrap {
-      display: none;
-      margin-top: 24px;
-      overflow: hidden;
-      border-radius: 20px;
-      background: #000;
-      box-shadow: 0 16px 45px rgba(0,0,0,.16);
-      aspect-ratio: 9 / 16;
-    }
-
-    .video-wrap.show {
-      display: block;
-      animation: reveal .5s ease both;
-    }
-
-    @keyframes reveal {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-
-    .footer {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #8d7d72;
-    }
-
-    @media (max-width: 420px) {
-      .card { padding: 32px 16px 22px; border-radius: 25px; }
-      .invite { font-size: 15px; }
+    .fallback a{
+      display:inline-block;color:#fff;background:rgba(0,0,0,.62);padding:9px 14px;border-radius:999px;
+      font-size:12px;text-decoration:none
     }
   </style>
 </head>
-
 <body>
-  <div id="petals"></div>
-
   <main class="page">
     <section class="card">
-      <div class="monogram">M&M</div>
+      <div class="monogram">M&amp;M</div>
       <div class="eyebrow">WEDDING INVITATION</div>
-
       <h1>مهسا <span class="heart">♥</span> میلاد</h1>
-
       <div class="divider"></div>
-
-      <p class="invite">
-        با افتخار و صمیمانه،<br>
-        شما را به جشن آغاز زندگی مشترکمان دعوت می‌کنیم.
-      </p>
-
-      <button class="play-btn" id="playBtn" type="button">
-        ▶ مشاهده دعوت‌نامه
-      </button>
-
-      <div class="video-wrap" id="videoWrap">
-        <iframe
-          id="videoFrame"
-          title="دعوت‌نامه عروسی مهسا و میلاد"
-          allow="autoplay; fullscreen"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
-      </div>
-
+      <p class="invite">با افتخار و صمیمانه،<br>شما را به جشن آغاز زندگی مشترکمان دعوت می‌کنیم.</p>
+      <button class="play" id="playBtn" type="button">▶ مشاهده دعوت‌نامه</button>
       <div class="note">برای پخش ویدیو روی دکمه بالا بزنید</div>
       <div class="footer">با عشق، منتظر دیدارتان هستیم 🤍</div>
     </section>
   </main>
 
+  <div class="modal" id="videoModal" aria-hidden="true">
+    <div class="video-shell">
+      <button class="close" id="closeBtn" type="button" aria-label="بستن">×</button>
+      <iframe
+        id="videoFrame"
+        title="دعوت‌نامه عروسی مهسا و میلاد"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+      </iframe>
+      <div class="fallback">
+        <a href="https://drive.google.com/file/d/1O3-LN2OZVa2brKf0-BMvHSEhUv96Kdef/view" target="_blank" rel="noopener">
+          اگر ویدیو باز نشد، اینجا بزنید
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script>
     const fileId = "1O3-LN2OZVa2brKf0-BMvHSEhUv96Kdef";
-    const btn = document.getElementById("playBtn");
-    const wrap = document.getElementById("videoWrap");
+    const previewUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+    const modal = document.getElementById("videoModal");
     const frame = document.getElementById("videoFrame");
+    const playBtn = document.getElementById("playBtn");
+    const closeBtn = document.getElementById("closeBtn");
 
-    btn.addEventListener("click", () => {
-      frame.src = `https://drive.google.com/file/d/${fileId}/preview`;
-      wrap.classList.add("show");
-      btn.style.display = "none";
-      wrap.scrollIntoView({ behavior: "smooth", block: "center" });
-    });
-
-    const petals = document.getElementById("petals");
-    for (let i = 0; i < 12; i++) {
-      const p = document.createElement("span");
-      p.className = "petal";
-      p.style.left = Math.random() * 100 + "vw";
-      p.style.opacity = (0.35 + Math.random() * 0.5).toFixed(2);
-      p.style.animationDuration = (9 + Math.random() * 8) + "s";
-      p.style.animationDelay = (-Math.random() * 12) + "s";
-      p.style.setProperty("--drift", (Math.random() * 120 - 60) + "px");
-      petals.appendChild(p);
+    function openVideo(){
+      frame.src = previewUrl;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
     }
+    function closeVideo(){
+      frame.src = "";
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.style.overflow = "";
+    }
+    playBtn.addEventListener("click", openVideo);
+    closeBtn.addEventListener("click", closeVideo);
+    modal.addEventListener("click", (e) => { if(e.target === modal) closeVideo(); });
   </script>
 </body>
 </html>
